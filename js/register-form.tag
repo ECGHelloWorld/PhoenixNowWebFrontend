@@ -21,7 +21,7 @@
   this.message = ''
   this.header = ''
   var self = this
-  var url = 'http://helloworld.nickendo.com'
+  var url = 'http://helloworldapi.nickendo.com'
 
   this.POST = (e) => {
       if (this.locationInput.value && this.requestInput.value) {
