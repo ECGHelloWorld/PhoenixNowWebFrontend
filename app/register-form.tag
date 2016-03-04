@@ -53,7 +53,7 @@
   this.register = (e) => {
       if (this.nameInput.value && this.emailInput.value && this.passwordInput.value) {
           request
-              .post(url + 'register')
+              .post(url + '/register')
               .accept('json')
               .send({ name: this.nameInput.value, email: this.emailInput.value,
                   password: this.passwordInput.value })
@@ -70,7 +70,7 @@
   this.login = (e) => {
       if (this.emailInput.value && this.passwordInput.value) {
           request
-              .post(url + 'login')
+              .post(url + '/login')
               .accept('json')
               .send({ email: this.emailInput.value,
                   password: this.passwordInput.value })
