@@ -4,10 +4,11 @@
   "description": "Web frontend for Phoenix Now signin service",
   "main": "index.js",
   "scripts": {
-    "clean": "rm dist/*",
-    "compile": "cp *.html dist/; browserify -t [ riotify --type es6 ] js/app.js -o dist/app.js",
-    "watch": "watchify -t [ riotify --type es6 ] js/app.js -o dist/app.js",
-    "browsersync": "browser-sync start --server --files 'dist/*.js, ./*.html'",
+    "clean": "rimraf dist/*; rimraf js/bundle.js",
+    "compile": "browserify -t [ riotify --type es6 ] js/app.js -o js/bundle.js",
+    "production": "cp *.html dist/; mkdir dist/js; browserify -t [ riotify --type es6 ] js/app.js -o dist/js/bundle.js",
+    "watch": "watchify -t [ riotify --type es6 ] js/app.js -o js/bundle.js",
+    "browsersync": "browser-sync start --server --files 'js/*.js, ./*.html'",
     "serve": "parallelshell 'npm run watch' 'npm run browsersync'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,10 +21,11 @@
     "superagent": "^1.8.0-beta.2"
   },
   "devDependencies": {
-    "watchify": "^3.7.0",
-    "riotify": "^1.0.0",
     "babel": "^5.8",
     "browser-sync": "^2.11.1",
-    "parallelshell": "^2.0.0"
+    "parallelshell": "^2.0.0",
+    "rimraf": "^2.5.2",
+    "riotify": "^1.0.0",
+    "watchify": "^3.7.0"
   }
 }
