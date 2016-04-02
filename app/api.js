@@ -1,4 +1,5 @@
 import { browserHistory } from 'react-router'
+import 'whatwg-fetch'
 
 const url = 'http://helloworldapi.nickendo.com'
 
@@ -37,12 +38,12 @@ function GET(endpoint, token) {
 }
 
 function POST(endpoint, data, token) {
-    var headers = new Headers({
+    var headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-    })
+    }
     if (token) {
-        headers.append('Authorization', token)
+        headers['Authorization'] = token
     }
     return fetch(url + endpoint, {
         method: 'POST',

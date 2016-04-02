@@ -6,7 +6,10 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
  
 module.exports = {
-  entry: './app/index.js',
+  entry: [
+      'es6-promise',
+      './app/index.js'
+  ],
   output: { path: __dirname + '/dist', filename: 'bundle.js' },
   module: {
     loaders: [
