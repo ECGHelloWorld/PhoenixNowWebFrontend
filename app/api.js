@@ -4,7 +4,7 @@ import 'whatwg-fetch'
 const url = 'http://helloworldapi.nickendo.com'
 
 function processStatus(response) {
-    if (response.status === 200) {
+    if (response.status.toString().indexOf('2') == 0) {
         return Promise.resolve(response)
     } else {
         return Promise.reject(new Error(response.statusText))
