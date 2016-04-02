@@ -46400,7 +46400,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var url = 'http://localhost:8000';
+	var url = 'http://helloworldapi.nickendo.com';
 
 	function processStatus(response) {
 	    if (response.status.toString().indexOf('2') == 0) {
