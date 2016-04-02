@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 import { LOGIN_SUCCESS,
          GET_USERS_SUCCESS,
+         ADD_EVENT_SUCCESS,
          GET_SIGNINS_SUCCESS,
+         GET_EVENTS_SUCCESS,
          REGISTER_SUCCESS,
          RESET_ERROR_MESSAGE
 } from './actions'
@@ -16,10 +18,21 @@ export function users(state = [], action) {
 }
 
 export function signins(state = [], action) {
-    console.log(action)
     switch (action.type) {
         case GET_SIGNINS_SUCCESS:
             return action.payload.signins
+        default:
+            return state
+    }
+}
+
+export function events(state = [], action) {
+    console.log(action)
+    switch (action.type) {
+        case GET_EVENTS_SUCCESS:
+            return action.payload.events
+        case ADD_EVENT_SUCCESS:
+            return state.events.concat([action.payload.event])
         default:
             return state
     }

@@ -63,10 +63,18 @@ export function Login(data) {
     return POST('/login', data)
 }
 
+export function addEvent(token, data) {
+    return POST('/events', data, token)
+}
+
 export function Users(token) {
     return GET('/users', token)
 }
 
 export function getSignins(token) {
     return GET('/signins', token)
+}
+
+export function getEvents(token) {
+    return GET('/events', token)
 }

@@ -5,11 +5,12 @@ import { Provider } from 'react-redux'
 import AppContainer from './components/App'
 import UserListContainer from './components/UserList'
 import SigninListContainer from './components/SigninList'
+import EventListContainer from './components/EventList'
 import LoginRegisterContainer from './components/LoginRegisterContainer'
 import Token from './components/Token'
 import Home from './components/Home'
 
-import { user, users, signins, error } from './reducers'
+import { user, users, signins, error, events } from './reducers'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunkMiddleware from 'redux-thunk'
@@ -22,6 +23,7 @@ let store = createStore(
         user,
         users,
         signins,
+        events,
         error,
         routing: routerReducer
     }),
@@ -41,6 +43,7 @@ render(
               <Route path="users" component={UserListContainer} />
               <Route path="token" component={Token} />
               <Route path="signins" component={SigninListContainer} />
+              <Route path="events" component={EventListContainer} />
           </Route>
       </Router>
   </Provider>,
