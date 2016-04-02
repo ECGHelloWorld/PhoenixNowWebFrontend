@@ -67,6 +67,6 @@ export function Users(token) {
     return GET('/users', token)
 }
 
-export function getEvents(token) {
-    return GET('/events', token)
+export function getSignins(token) {
+    return GET('/signins', token)
 }

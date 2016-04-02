@@ -51,6 +51,7 @@ class App extends Component {
                     <Nav>
                         <li role='presentation'><Link to="/users">Users</Link></li>
                         <li role='presentation'><Link to="/token">Token</Link></li>
+                        <li role='presentation'><Link to="/signins">Sign-ins</Link></li>
                     </Nav>
                     : null}
                 </Navbar>

@@ -1,4 +1,4 @@
-import { getEvents as APIgetEvents,
+import { getSignins as APIgetSignins,
          Login as APILogin,
          Users as APIUsers,
          Register as APIRegister,
@@ -11,9 +11,9 @@ export const LOGIN_ERROR = 'LOGIN_ERROR'
 export const REGISTER = 'REGISTER'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_ERROR = 'REGISTER_ERROR'
-export const GET_EVENTS = 'GET_EVENTS'
-export const GET_EVENTS_SUCCESS = 'GET_EVENTS_SUCCESS'
-export const GET_EVENTS_ERROR = 'GET_EVENTS_ERROR'
+export const GET_SIGNINS = 'GET_SIGNINS'
+export const GET_SIGNINS_SUCCESS = 'GET_SIGNINS_SUCCESS'
+export const GET_SIGNINS_ERROR = 'GET_SIGNINS_ERROR'
 export const GET_USERS = 'GET_USERS'
 export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS'
 export const GET_USERS_ERROR = 'GET_USERS_ERROR'
@@ -39,10 +39,10 @@ export function login(user) {
     }
 }
 
-export function getEvents(token) {
+export function getSignins(token) {
     return {
-        type: GET_EVENTS,
-        payload: APIgetEvents(token)
+        type: GET_SIGNINS,
+        payload: APIgetSignins(token)
     }
 }
 
