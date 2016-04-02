@@ -24,23 +24,6 @@ export function resetErrorMessage() {
         type: RESET_ERROR_MESSAGE
     }
 }
-//export function login(user) {
-//    return dispatch => {
-//        return dispatch({
-//            type: LOGIN,
-//            payload: APILogin(user)
-//        }).then(loginRedirect)
-//    }
-//}
-//
-//export function register(user) {
-//    return dispatch => {
-//        return dispatch({
-//            type: REGISTER,
-//            payload: APIRegister(user)
-//        }).then(loginRedirect)
-//    }
-//}
 
 export function register(user) {
     return {
