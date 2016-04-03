@@ -9,11 +9,6 @@ class App extends Component {
         super(props)
     }
 
-    handleDismissClick = (e) => {
-        this.props.resetErrorMessage()
-        e.preventDefault()
-    }
-
     loggedIn() {
         return !(this.props.user === null)
     }
@@ -26,13 +21,8 @@ class App extends Component {
         }
 
         return (
-            <Alert bsStyle='danger'>
+            <Alert bsStyle='danger' dismissAfter={2000} onDismiss={this.props.resetErrorMessage}>
                 <b>{error}</b>
-                {' '}
-                (<a href="#"
-                    onClick={this.handleDismissClick}>
-                    Dismiss
-                </a>)
             </Alert>
         )
     }
