@@ -4,9 +4,13 @@ import { getSignins as APIgetSignins,
          Register as APIRegister,
          getEvents as APIgetEvents,
          addEvent as APIaddEvent,
+         deleteEvent as APIdeleteEvent,
          loginRedirect
 } from './api'
 
+export const DELETE_EVENT = 'DELETE_EVENT'
+export const DELETE_EVENT_SUCCESS = 'DELETE_EVENT_SUCCESS'
+export const DELETE_EVENT_ERROR = 'DELETE_ERROR'
 export const ADD_EVENT = 'ADD_EVENT'
 export const ADD_EVENT_SUCCESS = 'ADD_EVENT_SUCCESS'
 export const ADD_EVENT_ERROR = 'ADD_EVENT_ERROR'
@@ -66,6 +70,16 @@ export function getSignins(token) {
     return {
         type: GET_SIGNINS,
         payload: APIgetSignins(token)
+    }
+}
+
+export function deleteEvent(token, id) {
+    return dispatch => {
+        dispatch({
+            type: DELETE_EVENT,
+            payload: APIdeleteEvent(token, id)
+        })
+        dispatch(getEvents(token))
     }
 }
 

@@ -28,6 +28,7 @@ class EventList extends Component {
                 <Table responsive>
                     <thead>
                         <tr>
+                            <th>x</th>
                             <th>ID</th>
                             <th>Title</th>
                             <th>Description</th>
@@ -50,7 +51,7 @@ class EventList extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     getEvents: (token) => {
-      dispatch(getEvents(token))
+        dispatch(getEvents(token))
     }
   }
 }

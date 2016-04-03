@@ -23,6 +23,20 @@ export function loginRedirect(response) {
     browserHistory.push('/users')
 }
 
+function DELETE(endpoint, token) {
+    return fetch(url + endpoint, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': token,
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+    })
+    .then(processStatus)
+    .then(parseJSON)
+}
+
 function GET(endpoint, token) {
     return fetch(url + endpoint, {
         method: 'GET',
@@ -77,4 +91,8 @@ export function getSignins(token) {
 
 export function getEvents(token) {
     return GET('/events', token)
+}
+
+export function deleteEvent(token, id) {
+    return DELETE('/events/' + id, token)
 }
