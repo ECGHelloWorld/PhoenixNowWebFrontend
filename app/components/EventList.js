@@ -33,12 +33,11 @@ class EventList extends Component {
                             <th>Description</th>
                             <th>From</th>
                             <th>To</th>
-                            <th>Importance</th>
                         </tr>
                     </thead>
                     <tbody>
                     {this.props.events.map(event =>
-                        <Event key={event.id} from_date={event.from_date} to_date={event.to_date} title={event.title} description={event.description} importance={event.importance} id={event.id} />
+                        <Event key={event.id} from_date={event.from_date} to_date={event.to_date} title={event.title} description={event.description} id={event.id} />
                     )}
                     </tbody>
                 </Table>

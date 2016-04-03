@@ -40,7 +40,6 @@ export function register(user) {
             payload: APIRegister(user)
         }).then(({ action }) => {
             localStorage.setItem('token', action.payload.token) 
-            console.log('hi')
         })
     }
 }
@@ -51,7 +50,6 @@ export function login(user) {
             type: LOGIN,
             payload: APILogin(user)
         }).then(({ action }) => {
-            console.log('hi')
             localStorage.setItem('token', action.payload.token) 
         })
     }
