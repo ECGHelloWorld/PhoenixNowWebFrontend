@@ -32,7 +32,7 @@ export function events(state = [], action) {
         case GET_EVENTS_SUCCESS:
             return action.payload.events
         case ADD_EVENT_SUCCESS:
-            return state.events.concat([action.payload.event])
+            return state.concat([action.payload.event])
         default:
             return state
     }
