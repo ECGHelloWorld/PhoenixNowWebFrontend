@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Event from './Event'
 import EventForm from './EventForm'
 import { getEvents } from '../actions'
-import { Table } from 'react-bootstrap'
+import { Table, Row, Col } from 'react-bootstrap'
 
 class EventList extends Component {
     componentWillMount() {
@@ -13,7 +13,18 @@ class EventList extends Component {
     render() {
         return (
             <div>
-                <EventForm />
+            <Row>
+                <Col xs={12} md={6}>
+                    <p>To use this app, just fill in the form</p>
+                    <p>Importance takes whole numbers and the higher it is the more important the event is</p>
+                    <p>The date format for a day like April 2, 2016 is 2016-4-2</p>
+                    <p>For a day like November 12, 2016 the format is 2016-11-12</p>
+                </Col>
+                <Col xs={12} md={6}>
+                    <EventForm />
+                </Col>
+            </Row>
+            <Row>
                 <Table responsive>
                     <thead>
                         <tr>
@@ -31,6 +42,7 @@ class EventList extends Component {
                     )}
                     </tbody>
                 </Table>
+            </Row>
             </div>
         )
     }

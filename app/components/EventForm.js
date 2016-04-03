@@ -45,7 +45,7 @@ class EventForm extends Component {
         return (
             <form onSubmit={this.handleSubmit} >
                 <Input type='text' label='Title' value={this.state.title} onChange={this.handleTitle} />
-                <Input type='text' label='Description' value={this.state.description} onChange={this.handleDescription} />
+                <Input type='textarea' label='Description' value={this.state.description} onChange={this.handleDescription} />
                 <Input type='text' label='From Date' value={this.state.from_date} onChange={this.handleFromDate} />
                 <Input type='text' label='To Date' value={this.state.to_date} onChange={this.handleToDate} />
                 <Input type='text' label='Importance' value={this.state.importance} onChange={this.handleImportance} />
