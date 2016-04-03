@@ -27,7 +27,6 @@ export function signins(state = [], action) {
 }
 
 export function events(state = [], action) {
-    console.log(action)
     switch (action.type) {
         case GET_EVENTS_SUCCESS:
             return action.payload.events
@@ -38,7 +37,7 @@ export function events(state = [], action) {
     }
 }
 
-export function user(state = null, action) {
+export function user(state = localStorage.getItem('token') ? {token: localStorage.getItem('token')} : null, action) {
     switch (action.type) {
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:

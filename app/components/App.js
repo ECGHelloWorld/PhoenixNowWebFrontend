@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { Alert, Grid, Row, Nav, Navbar, NavDropdown, MenuItem, NavItem } from 'react-bootstrap'
-import { resetErrorMessage } from '../actions'
+import { resetErrorMessage, logout } from '../actions'
 
 class App extends Component {
     constructor(props) {
@@ -43,6 +43,7 @@ class App extends Component {
                         <li role='presentation'><Link to="/token">Token</Link></li>
                         <li role='presentation'><Link to="/signins">Sign-ins</Link></li>
                         <li role='presentation'><Link to="/events">Events</Link></li>
+                        <li role='presentation'><a href='#' onClick={this.props.logout}>Logout</a></li>
                     </Nav>
                     : null}
                 </Navbar>
@@ -62,4 +63,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {resetErrorMessage})(App)
+export default connect(mapStateToProps, {resetErrorMessage, logout})(App)

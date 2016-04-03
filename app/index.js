@@ -14,6 +14,7 @@ import { user, users, signins, error, events } from './reducers'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunkMiddleware from 'redux-thunk'
+import reduxReset from 'redux-reset'
 
 import { IndexRoute, Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
@@ -30,7 +31,8 @@ let store = createStore(
     applyMiddleware(
         thunkMiddleware,
         promiseMiddleware({promiseTypeSuffixes: ['LOADING', 'SUCCESS', 'ERROR']})
-    )
+    ),
+    reduxReset()
 )
 
 const history = syncHistoryWithStore(browserHistory, store)

@@ -34,16 +34,33 @@ export function resetErrorMessage() {
 }
 
 export function register(user) {
-    return {
-        type: REGISTER,
-        payload: APIRegister(user)
+    return dispatch => {
+        return dispatch({
+            type: REGISTER,
+            payload: APIRegister(user)
+        }).then(({ action }) => {
+            localStorage.setItem('token', action.payload.token) 
+            console.log('hi')
+        })
     }
 }
 
 export function login(user) {
-    return {
-        type: LOGIN,
-        payload: APILogin(user)
+    return dispatch => {
+        return dispatch({
+            type: LOGIN,
+            payload: APILogin(user)
+        }).then(({ action }) => {
+            console.log('hi')
+            localStorage.setItem('token', action.payload.token) 
+        })
+    }
+}
+
+export function logout() {
+    return dispatch => {
+        localStorage.removeItem('token')
+        dispatch({type: 'RESET'})
     }
 }
 
