@@ -40,9 +40,7 @@ class App extends Component {
                     { this.loggedIn() ? 
                     <Nav>
                         <li role='presentation'><Link to="/users">Users</Link></li>
-                        <li role='presentation'><Link to="/token">Token</Link></li>
                         <li role='presentation'><Link to="/signins">Sign-ins</Link></li>
-                        <li role='presentation'><Link to="/events">Events</Link></li>
                         <li role='presentation'><a href='#' onClick={this.props.logout}>Logout</a></li>
                     </Nav>
                     : null}

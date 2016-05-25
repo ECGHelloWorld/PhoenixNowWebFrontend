@@ -12,7 +12,7 @@ const Home = ({user}) => {
     } else {
         return (
             <div>
-            Welcome to PhoenixNow
+            Welcome to PhoenixNow. Here you can sign in and administer sign-ins from users
             </div>
         )
     }

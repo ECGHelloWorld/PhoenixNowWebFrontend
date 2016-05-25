@@ -16,11 +16,12 @@ class UserList extends Component {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Signed-in</th>
                     </tr>
                 </thead>
                 <tbody>
                 {this.props.users.map(user =>
-                    <User key={user.id} name={user.name} id={user.id} email={user.email} />
+                    <User key={user.id} name={user.name} id={user.id} email={user.email} signedin={user.signedin} />
                 )}
                 </tbody>
             </Table>
