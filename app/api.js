@@ -85,6 +85,10 @@ export function Users(token) {
     return GET('/users', token)
 }
 
+export function getUser(token, id) {
+    return GET('/users/' + id, token)
+}
+
 export function getSignins(token) {
     return GET('/signins', token)
 }

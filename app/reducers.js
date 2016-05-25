@@ -5,7 +5,8 @@ import { LOGIN_SUCCESS,
          GET_SIGNINS_SUCCESS,
          GET_EVENTS_SUCCESS,
          REGISTER_SUCCESS,
-         RESET_ERROR_MESSAGE
+         RESET_ERROR_MESSAGE,
+         GET_USER_SUCCESS
 } from './actions'
 
 export function users(state = [], action) {
@@ -32,6 +33,15 @@ export function events(state = [], action) {
             return action.payload.events
         case ADD_EVENT_SUCCESS:
             return state.concat([action.payload.event])
+        default:
+            return state
+    }
+}
+
+export function getuser(state = [], action) {
+    switch (action.type) {
+        case GET_USER_SUCCESS:
+            return action.payload.signins
         default:
             return state
     }

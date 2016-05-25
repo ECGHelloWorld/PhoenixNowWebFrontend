@@ -3,6 +3,7 @@ import { getSignins as APIgetSignins,
          Users as APIUsers,
          Register as APIRegister,
          getEvents as APIgetEvents,
+         getUser as APIgetUser,
          addEvent as APIaddEvent,
          deleteEvent as APIdeleteEvent,
          loginRedirect
@@ -80,6 +81,13 @@ export function deleteEvent(token, id) {
             payload: APIdeleteEvent(token, id)
         })
         dispatch(getEvents(token))
+    }
+}
+
+export function getUser(token, id) {
+    return {
+        type: GET_USER,
+        payload: APIgetUser(token, id)
     }
 }
 
