@@ -1,27 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getUser } from '../actions'
-import { Table } from 'react-bootstrap'
+import Signin from './Signin'
+import { getSignins } from '../actions'
 import SigninList from './SigninList'
+import { Table } from 'react-bootstrap'
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getSignins: (token) => {
-      dispatch(getUser(token, ownProps.params.userid))
+      dispatch(getSignins(token))
     }
   }
 }
 
 const mapStateToProps = (state) => {
     return {
-        signins: state.getuser,
+        signins: state.signins,
         token: state.user.token
     }
 }
 
-const UserSigninListContainer = connect(
+const SigninListContainer = connect(
         mapStateToProps,
         mapDispatchToProps
 )(SigninList)
 
-export default UserSigninListContainer
+export default SigninListContainer
