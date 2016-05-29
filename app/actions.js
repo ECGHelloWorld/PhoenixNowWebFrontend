@@ -6,7 +6,8 @@ import { getSignins as APIgetSignins,
          getUser as APIgetUser,
          addEvent as APIaddEvent,
          deleteEvent as APIdeleteEvent,
-         loginRedirect
+         loginRedirect,
+         verifySchedule as APIverifySchedule
 } from './api'
 
 export const DELETE_EVENT = 'DELETE_EVENT'
@@ -34,6 +35,9 @@ export const GET_USERS = 'GET_USERS'
 export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS'
 export const GET_USERS_ERROR = 'GET_USERS_ERROR'
 export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE'
+export const VERIFY_SCHEDULE_ERROR='VERIFY_SCHEDULE_ERROR'
+export const VERIFY_SCHEDULE='VERIFY_SCHEDULE'
+export const VERIFY_SCHEDULE_SUCCESS='VERIFY_SCHEDULE_SUCCESS'
 
 export function resetErrorMessage() {
     return {
@@ -47,7 +51,7 @@ export function register(user) {
             type: REGISTER,
             payload: APIRegister(user)
         }).then(({ action }) => {
-            localStorage.setItem('token', action.payload.token) 
+            localStorage.setItem('token', action.payload.token)
         })
     }
 }
@@ -58,7 +62,7 @@ export function login(user) {
             type: LOGIN,
             payload: APILogin(user)
         }).then(({ action }) => {
-            localStorage.setItem('token', action.payload.token) 
+            localStorage.setItem('token', action.payload.token)
         })
     }
 }
@@ -113,4 +117,11 @@ export function getUsers(token) {
         type: GET_USERS,
         payload: APIUsers(token)
     }
+}
+
+export function verifySchedule(token,id){
+  return{
+    type: VERIFY_SCHEDULE,
+    payload: APIverifySchedule(token,id)
+  }
 }
