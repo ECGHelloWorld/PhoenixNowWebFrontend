@@ -1,7 +1,7 @@
 import { browserHistory } from 'react-router'
 import 'whatwg-fetch'
 
-const url = 'http://helloworldapi.nickendo.com'
+const url = 'http://192.168.1.127:8000'
 
 function processStatus(response) {
     if (response.status.toString().indexOf('2') == 0) {

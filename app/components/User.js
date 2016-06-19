@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 
-const User = ({ id, name, email, signedin, schedule,finalschedule,scheduleverified, verify, handleEvent }) => (
+const User = ({ id, name, email, signedin, schedule,finalschedule,scheduleverified, verify, handleEvent, code }) => (
     <tr>
         <td>{id}</td>
         <td><Link to={"/users/" + id}>{name}</Link></td>

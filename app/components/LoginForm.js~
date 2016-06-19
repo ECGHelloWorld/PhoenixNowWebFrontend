@@ -6,13 +6,13 @@ import { ButtonInput, Input } from 'react-bootstrap'
 class LoginForm extends Component {
     constructor(props) {
         super(props)
-        this.state = {email: '', password: ''}
+        this.state = {email: '', password: '',code:'1'}
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.dispatch(login({email: this.state.email, password: this.state.password}))
-        this.setState({email: '', password: ''})
+        this.props.dispatch(login({email: this.state.email, password: this.state.password, code: this.state.code}))
+        this.setState({email: '', password: '',code:''})
     }
 
     handleEmail = (e) => {
@@ -22,13 +22,16 @@ class LoginForm extends Component {
     handlePassword = (e) => {
         this.setState({password: e.target.value})
     }
-
+    handleCode=(e)=>{
+      this.setState({code: e.target.value})
+    }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit} >
                 <Input type='text' label='Email' value={this.state.email} onChange={this.handleEmail} />
                 <Input type='password' label='Password' value={this.state.password} onChange={this.handlePassword} />
+                <Input type='code' label='Confirmation Code' value={this.state.code} onChange={this.handleCode}/>
                 <ButtonInput type='submit' value='Login' />
             </form>
         )

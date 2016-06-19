@@ -49,7 +49,6 @@ export function getuser(state = [], action) {
 
 export function user(state = localStorage.getItem('token') ? {token: localStorage.getItem('token')} : null, action) {
     switch (action.type) {
-        case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
             return {...state, token: action.payload.token}
         default:

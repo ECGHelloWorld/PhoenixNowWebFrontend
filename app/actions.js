@@ -51,7 +51,7 @@ export function register(user) {
             type: REGISTER,
             payload: APIRegister(user)
         }).then(({ action }) => {
-            localStorage.setItem('token', action.payload.token)
+            
         })
     }
 }

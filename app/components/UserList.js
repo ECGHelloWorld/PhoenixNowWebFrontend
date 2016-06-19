@@ -13,7 +13,6 @@ class UserList extends Component {
     handleEvent=(e,value)=>{
       e.preventDefault()
       verifySchedule(this.props.token, value)
-      this.setState({number:this.state.number+value})
 
     }
     render() {
@@ -28,7 +27,7 @@ class UserList extends Component {
                         <th>User-Submitted Schedule</th>
                         <th>Verified Schedule</th>
                         <th>Schedule-Verified</th>
-                        <th>Verify+{this.state.number}</th>
+                        <th>Verify</th>
                     </tr>
                 </thead>
                 <tbody>
